@@ -137,6 +137,26 @@ installTypora() {
 	fi
 }
 
+installSnagit() {
+	if [ -d "/Applications/TechSmith Capture.app" ]; then
+		echo "Snagit already installed"
+	else 
+		echo "Installing Snagit"
+		brew install --cask techsmith-capture
+	fi
+}
+
+installGulp() {
+	which -s gulp
+	if [[ $? != 0 ]] ; then
+		echo "Installing gulp"
+		npm install --global gulp
+	else
+		echo "gulp already installed"
+	fi
+
+}
+
 
 homebrew
 visualcodestudio
@@ -150,3 +170,5 @@ installDockerDesktop
 installDrawIo
 installSTS
 installTypora
+installSnagit
+installGulp
