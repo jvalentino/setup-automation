@@ -128,6 +128,16 @@ installSTS() {
 	fi
 }
 
+installTypora() {
+	if [ -d "/Applications/Typora.app" ]; then
+		echo "Typora already installed"
+	else 
+		echo "Installing Typora"
+		brew install --cask typora
+	fi
+}
+
+
 homebrew
 visualcodestudio
 installGit
@@ -139,3 +149,4 @@ installJava
 installDockerDesktop
 installDrawIo
 installSTS
+installTypora
