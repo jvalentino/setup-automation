@@ -157,6 +157,21 @@ installGulp() {
 
 }
 
+installHot() {
+	if [ -d "/Applications/Hot.app" ]; then
+		echo "Hot already installed"
+	else 
+		echo "Installing Hot"
+		# broken
+		# brew install --force --cask hot
+		mkdir build || true
+		curl -L -O https://github.com/macmade/Hot/releases/download/1.6.1/Hot.app.zip -o Hot.app.zip
+		mv Hot.app.zip build
+		unzip build/Hot.app.zip -d build
+		cp -rf build/Hot.app /Applications
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -172,3 +187,4 @@ installSTS
 installTypora
 installSnagit
 installGulp
+installHot
