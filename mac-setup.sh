@@ -29,10 +29,6 @@ installGit() {
 	else
 		echo "git already installed"
 	fi
-
-	# ssh-keygen -t rsa -b 4096 -C "jvalentino2@gmail.com"
-	# pbcopy < ~/.ssh/id_rsa.pub
-	# create new SSH key using this
 }
 
 githubDesktop() {
@@ -47,7 +43,7 @@ githubDesktop() {
 
 installNode() {
 	# 
-	which -s git
+	which -s node
 	if [[ $? != 0 ]] ; then
 		echo "Installing NPM"
 		brew install node
@@ -172,6 +168,74 @@ installHot() {
 	fi
 }
 
+installMarkdownToc() {
+	which -s gulp
+	if [[ $? != 0 ]] ; then
+		echo "Installing markdown-toc"
+		npm install --global markdown-toc
+	else
+		echo "markdown-toc already installed"
+	fi
+}
+
+installCreateReactApp() {
+	which -s create-react-app
+	if [[ $? != 0 ]] ; then
+		echo "Installing create-react-app"
+		npm install --global create-react-app
+	else
+		echo "create-react-app already installed"
+	fi
+}
+
+installHeroku() {
+	which -s heroku
+	if [[ $? != 0 ]] ; then
+		echo "Installing heroku"
+		npm install heroku --global
+	else
+		echo "heroku already installed"
+	fi
+}
+
+installOpera() {
+	if [ -d "/Applications/Opera.app" ]; then
+		echo "opera already installed"
+	else
+		echo "Installing opera"
+		brew install --cask opera
+	fi
+}
+
+installSlack() {
+	if [ -d "/Applications/Slack.app" ]; then
+		echo "slack already installed"
+	else
+		echo "Installing slack"
+		brew install --cask slack
+	fi
+}
+
+installGradle() {
+	which -s gradle
+	if [[ $? != 0 ]] ; then
+		echo "Installing gradle"
+		brew install gradle
+	else
+		echo "gradle already installed"
+	fi
+}
+
+installMaven() {
+	which -s mvn
+	if [[ $? != 0 ]] ; then
+		echo "Installing Maven"
+		brew install mvn
+	else
+		echo "mvn already installed"
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -180,7 +244,6 @@ githubDesktop
 installNode
 installSfdx
 installJava
-# installDocker
 installDockerDesktop
 installDrawIo
 installSTS
@@ -188,3 +251,10 @@ installTypora
 installSnagit
 installGulp
 installHot
+installMarkdownToc
+installCreateReactApp
+installHeroku
+installOpera
+installSlack
+installGradle
+installMaven
