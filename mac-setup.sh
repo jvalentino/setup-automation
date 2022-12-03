@@ -236,6 +236,15 @@ installMaven() {
 	fi
 }
 
+installIntelliJCE() {
+	if [ -d "/Applications/IntelliJ IDEA CE.app" ]; then
+		echo "IntelliJ already installed"
+	else
+		echo "Installing IntelliJ CE"
+		brew install --cask intellij-idea-ce
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -258,3 +267,5 @@ installOpera
 installSlack
 installGradle
 installMaven
+installIntelliJCE
+
