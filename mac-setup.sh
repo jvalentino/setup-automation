@@ -245,6 +245,16 @@ installIntelliJCE() {
 	fi
 }
 
+installDockerCompose() {
+	which -s docker-compose
+	if [[ $? != 0 ]] ; then
+		echo "Installing docker-compose"
+		brew install docker-compose
+	else
+		echo "docker-compose already installed"
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -268,4 +278,4 @@ installSlack
 installGradle
 installMaven
 installIntelliJCE
-
+installDockerCompose
