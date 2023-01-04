@@ -255,6 +255,40 @@ installDockerCompose() {
 	fi
 }
 
+# https://python.land/installing-python
+installPython() {
+	which -s python
+	if [[ $? != 0 ]] ; then
+		echo "Installing python"
+		brew install python
+		echo 'export PATH="/opt/homebrew/opt/python@3.10/libexec/bin:$PATH"' >> ~/.zshrc
+		source ~/.zshrc
+	else
+		echo "python already installed"
+	fi
+}
+
+# https://pybuilder.io/
+installPYB() {
+	which -s pyb
+	if [[ $? != 0 ]] ; then
+		echo "Installing pyb"
+		pip install pybuilder
+	else
+		echo "pyb already installed"
+	fi
+}
+
+installVirtualenv() {
+	which -s virtualenv
+	if [[ $? != 0 ]] ; then
+		echo "Installing virtualenv"
+		pip install virtualenv
+	else
+		echo "virtualenv already installed"
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -279,3 +313,6 @@ installGradle
 installMaven
 installIntelliJCE
 installDockerCompose
+installPython
+installPYB
+installVirtualenv
