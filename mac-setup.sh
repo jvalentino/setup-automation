@@ -78,8 +78,8 @@ installJava() {
 		echo "OpenJDK already installed"
 	else
 		echo "Installing OpenJDK"
-		brew install openjdk 
-		echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> ~/.zshrc
+		brew install openjdk@17 
+		echo 'export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"' >> ~/.zshrc
 		source ~/.zshrc
 	fi
 
