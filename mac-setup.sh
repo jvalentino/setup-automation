@@ -78,8 +78,8 @@ installJava() {
 		echo "OpenJDK already installed"
 	else
 		echo "Installing OpenJDK"
-		brew install openjdk@17 
-		echo 'export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"' >> ~/.zshrc
+		brew install openjdk@11 
+		echo 'export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"' >> ~/.zshrc
 		source ~/.zshrc
 	fi
 
@@ -289,6 +289,15 @@ installVirtualenv() {
 	fi
 }
 
+installPgadmin() {
+	if [ -d "/Applications/pgAdmin 4.app" ]; then
+		echo "pgadmin4 already installed"
+	else
+		echo "Installing pgadmin4"
+		brew install --cask pgadmin4
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -316,3 +325,5 @@ installDockerCompose
 installPython
 installPYB
 installVirtualenv
+installPgadmin
+
