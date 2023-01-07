@@ -298,6 +298,16 @@ installPgadmin() {
 	fi
 }
 
+installLiquibase() {
+	which -s liquibase
+	if [[ $? != 0 ]] ; then
+		echo "Installing liquibase"
+		brew install liquibase
+	else
+		echo "liquibase already installed"
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -326,4 +336,4 @@ installPython
 installPYB
 installVirtualenv
 installPgadmin
-
+installLiquibase
