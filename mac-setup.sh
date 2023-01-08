@@ -308,6 +308,16 @@ installLiquibase() {
 	fi
 }
 
+installPsql() {
+	which -s psql
+	if [[ $? != 0 ]] ; then
+		echo "Installing psql"
+		brew install postgresql
+	else
+		echo "psql already installed"
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -337,3 +347,4 @@ installPYB
 installVirtualenv
 installPgadmin
 installLiquibase
+installPsql
