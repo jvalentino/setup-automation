@@ -6,6 +6,7 @@ This is my "catch all" project for containing a script for installing everything
 
 It also works as a good thing to copy an paste from if you are trying to automate some specific development enviroment. Copy it, paste it, remote the stuff you don't need, add the stuff you do.
 
+
 ## Mac
 
 It utilized homebrew as the basis for tool installation, and is run using the following:
