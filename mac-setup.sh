@@ -336,6 +336,15 @@ installGoogleDrive() {
 	fi
 }
 
+installPostman() {
+	if [ -d "/Applications/Postman.app" ]; then
+		echo "Postman already installed"
+	else
+		echo "InstallingPostman"
+		brew install --cask postman
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -368,4 +377,4 @@ installLiquibase
 installPsql
 installGoogleChrome
 installGoogleDrive
-
+installPostman
