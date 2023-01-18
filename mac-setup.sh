@@ -318,6 +318,24 @@ installPsql() {
 	fi
 }
 
+installGoogleChrome() {
+	if [ -d "/Applications/Google Chrome.app" ]; then
+		echo "Google Chrome already installed"
+	else
+		echo "Installing Google Chrome"
+		brew install google-chrome
+	fi
+}
+
+installGoogleDrive() {
+	if [ -d "/Applications/Google Drive.app" ]; then
+		echo "Google Drive already installed"
+	else
+		echo "Installing Google Drive"
+		brew install google-drive
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -348,3 +366,6 @@ installVirtualenv
 installPgadmin
 installLiquibase
 installPsql
+installGoogleChrome
+installGoogleDrive
+
