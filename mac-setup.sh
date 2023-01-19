@@ -345,6 +345,15 @@ installPostman() {
 	fi
 }
 
+installDropbox() {
+	if [ -d "/Applications/Dropbox.app" ]; then
+		echo "Dropbox already installed"
+	else
+		echo "Installing Dropbox"
+		brew install --cask dropbox
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -378,3 +387,4 @@ installPsql
 installGoogleChrome
 installGoogleDrive
 installPostman
+installDropbox
