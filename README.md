@@ -4,7 +4,46 @@ At any place I go, I am always having to install the same software over and over
 
 This is my "catch all" project for containing a script for installing everything I could possibly need.
 
-It also works as a good thing to copy an paste from if you are trying to automate some specific development enviroment. Copy it, paste it, remote the stuff you don't need, add the stuff you do.
+It also works as a good thing to copy an paste from if you are trying to automate some specific development enviroment. Copy it, paste it, remove the stuff you don't need, add the stuff you do. Like this for example if you only cared about JavaScript:
+
+```bash
+# ...
+homebrew
+visualcodestudio
+installGit
+githubDesktop
+installNode
+# installSfdx
+# installJava
+# installDockerDesktop
+# installDrawIo
+# installSTS
+installTypora
+# installSnagit
+installGulp
+# installHot
+installMarkdownToc
+installCreateReactApp
+# installHeroku
+# installOpera
+# installSlack
+# installGradle
+# installMaven
+# installIntelliJCE
+# installDockerCompose
+# installPython
+# installPYB
+# installVirtualenv
+# installPgadmin
+# installLiquibase
+# installPsql
+installGoogleChrome
+installGoogleDrive
+installPostman
+installDropbox
+```
+
+
 
 
 ## Mac
@@ -179,3 +218,68 @@ The application for the Slack messaging platform.
 
 - https://en.wikipedia.org/wiki/Apache_Maven
 
+## IntelliJ (Community Edition)
+
+> **IntelliJ IDEA** is an [integrated development environment](https://en.wikipedia.org/wiki/Integrated_development_environment) (IDE) written in [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) for developing computer software written in Java, [Kotlin](https://en.wikipedia.org/wiki/Kotlin_(programming_language)), [Groovy](https://en.wikipedia.org/wiki/Groovy_(programming_language)), and other [JVM](https://en.wikipedia.org/wiki/JVM)-based languages. It is developed by [JetBrains](https://en.wikipedia.org/wiki/JetBrains) (formerly known as IntelliJ) and is available as an [Apache 2 Licensed](https://en.wikipedia.org/wiki/Apache_2_License) community edition,[[2\]](https://en.wikipedia.org/wiki/IntelliJ_IDEA#cite_note-2) and in a [proprietary](https://en.wikipedia.org/wiki/Proprietary_software) commercial edition. Both can be used for commercial development.[[3\]](https://en.wikipedia.org/wiki/IntelliJ_IDEA#cite_note-3)[[4\]](https://en.wikipedia.org/wiki/IntelliJ_IDEA#cite_note-4)
+
+- https://en.wikipedia.org/wiki/IntelliJ_IDEA
+
+## Docker Compose
+
+> [Docker Compose](https://docs.docker.com/compose/) is a tool that was developed to help define and share multi-container applications. With Compose, we can create a YAML file to define the services and with a single command, can spin everything up or tear it all down.
+>
+> The *big* advantage of using Compose is you can define your application stack in a file, keep it at the root of your project repo (it’s now version controlled), and easily enable someone else to contribute to your project. Someone would only need to clone your repo and start the compose app. In fact, you might see quite a few projects on GitHub/GitLab doing exactly this now.
+
+- https://docs.docker.com/get-started/08_using_compose/
+
+## Python
+
+> Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically-typed and garbage-collected. It supports multiple programming paradigms, including structured, object-oriented and functional programming
+
+- https://en.wikipedia.org/wiki/Python_(programming_language)
+
+## PyBuilder
+
+> *PyBuilder* is a software build automation tool written in pure Python mainly targeting Python ecosystem. It is based on the concept of dependency-based programming but also comes along with powerful plugin mechanism that allows the construction of build life-cycles similar to those known from other famous build tools like *Apache Maven* and *Gradle*.
+
+- https://pybuilder.io/
+
+## Virtualenv (For Python)
+
+> `virtualenv` is a tool to create isolated Python environments
+
+- https://virtualenv.pypa.io/en/latest/
+
+## Pg Admin 4
+
+> pgAdmin is the most popular and feature rich Open Source administration and development platform for PostgreSQL, the most advanced Open Source database in the world.
+
+- https://www.pgadmin.org/
+
+## Liquibase
+
+> Liquibase is an open-source database-independent library for tracking, managing and applying database schema changes. It was started in 2006 to allow easier tracking of database changes, especially in an agile software development environment
+
+- https://en.wikipedia.org/wiki/Liquibase
+
+## PSQL
+
+> psql is a terminal-based front-end to PostgreSQL. It enables you to type in queries interactively, issue them to PostgreSQL, and see the query results. Alternatively, input can be from a file or from command line arguments. In addition, psql provides a number of meta-commands and various shell-like features to facilitate writing scripts and automating a wide variety of tasks.
+
+- https://www.postgresql.org/docs/current/app-psql.html
+
+## Google Chrome
+
+TBD
+
+## Google Drive
+
+TBD
+
+## Postman
+
+TBD
+
+## Dropbox
+
+TBD
