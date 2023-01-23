@@ -354,6 +354,15 @@ installDropbox() {
 	fi
 }
 
+installZoom() {
+	if [ -d "/Applications/zoom.us.app" ]; then
+		echo "Zoom already installed"
+	else
+		echo "Installing Zoom"
+		brew install --cask zoom
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -388,3 +397,4 @@ installGoogleChrome
 installGoogleDrive
 installPostman
 installDropbox
+installZoom
