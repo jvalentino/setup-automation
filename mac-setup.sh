@@ -169,7 +169,7 @@ installHot() {
 }
 
 installMarkdownToc() {
-	which -s gulp
+	which -s markdown-toc
 	if [[ $? != 0 ]] ; then
 		echo "Installing markdown-toc"
 		npm install --global markdown-toc
