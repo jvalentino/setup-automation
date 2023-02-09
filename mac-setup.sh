@@ -372,6 +372,16 @@ installCamtasia() {
 	fi
 }
 
+installTomcat() {
+	if [ -d "/opt/homebrew/opt/tomcat" ]; then
+		
+		echo "tomcat already installed"
+	else
+		echo "Installing tomcat"
+		brew install tomcat
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -408,3 +418,4 @@ installPostman
 installDropbox
 installZoom
 installCamtasia
+installTomcat
