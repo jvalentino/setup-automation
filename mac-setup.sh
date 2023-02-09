@@ -363,6 +363,15 @@ installZoom() {
 	fi
 }
 
+installCamtasia() {
+	if [ -d "/Applications/Camtasia 2022.app" ]; then
+		echo "camtasia already installed"
+	else 
+		echo "Installing camtasia"
+		brew install --cask camtasia
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -398,3 +407,4 @@ installGoogleDrive
 installPostman
 installDropbox
 installZoom
+installCamtasia
