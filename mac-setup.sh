@@ -382,6 +382,26 @@ installTomcat() {
 	fi
 }
 
+installMinikube() {
+	which -s minikube
+	if [[ $? != 0 ]] ; then
+		echo "Installing kompose"
+		brew install minikube
+	else
+		echo "minikube already installed"
+	fi
+}
+
+installKompose() {
+	which -s kompose
+	if [[ $? != 0 ]] ; then
+		echo "Installing kompose"
+		brew install kompose
+	else
+		echo "kompose already installed"
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -419,3 +439,5 @@ installDropbox
 installZoom
 installCamtasia
 installTomcat
+installMinikube
+installKompose
