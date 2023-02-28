@@ -402,6 +402,16 @@ installKompose() {
 	fi
 }
 
+installHelm() {
+	which -s helm
+	if [[ $? != 0 ]] ; then
+		echo "Installing helm"
+		brew install helm
+	else
+		echo "helm already installed"
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -441,3 +451,4 @@ installCamtasia
 installTomcat
 installMinikube
 installKompose
+installHelm
