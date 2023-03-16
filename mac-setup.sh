@@ -412,6 +412,16 @@ installHelm() {
 	fi
 }
 
+installRedisResktop() {
+	if [ -d "/Applications/Another Redis Desktop Manager.app" ]; then
+		echo "redis desktop already installed"
+	else 
+		echo "Installing redis desktop "
+		brew install --cask another-redis-desktop-manager
+		sudo xattr -rd com.apple.quarantine /Applications/Another\ Redis\ Desktop\ Manager.app
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -452,3 +462,4 @@ installTomcat
 installMinikube
 installKompose
 installHelm
+installRedisResktop
