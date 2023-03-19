@@ -441,6 +441,23 @@ installDbVis() {
 	fi
 }
 
+# Could not get this to work
+# use https://kafkaide.com/download/
+installKafkaIde() {
+	if [ -d "/Applications/Kafka IDE.app" ]; then
+		echo "Kafka IDE desktop already installed"
+	else 
+		echo "Installing Kafka IDE"
+		brew install p7zip
+		rm -rf build || true
+		mkdir build || true
+		curl https://kafkaide-download.s3-eu-west-1.amazonaws.com/ide/2021.10.2/Kafka_IDE-2021.10.2.dmg -o build/kafkaide.dmg
+		7z x -obuild/kafka build/kafkaide.dmg
+		cp -rf build/kafka/Kafka\ IDE\ 2021.10.2/Kafka\ IDE.app /Applications/Kafka\ IDE.app
+		sudo xattr -rd com.apple.quarantine /Applications/Kafka\ IDE.app
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -484,3 +501,4 @@ installHelm
 installRedisResktop
 installRedis
 installDbVis
+# installKafkaIde
