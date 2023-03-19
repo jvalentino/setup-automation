@@ -458,6 +458,16 @@ installKafkaIde() {
 	fi
 }
 
+installKafka() {
+	which -s kafka-topics
+	if [[ $? != 0 ]] ; then
+		echo "Installing kafka"
+		brew install kafka
+	else
+		echo "kafka already installed"
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -502,3 +512,5 @@ installRedisResktop
 installRedis
 installDbVis
 # installKafkaIde
+installKafka
+
