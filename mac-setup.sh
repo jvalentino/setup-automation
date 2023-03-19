@@ -422,6 +422,25 @@ installRedisResktop() {
 	fi
 }
 
+installRedis() {
+	which -s redis-cli
+	if [[ $? != 0 ]] ; then
+		echo "Installing redis"
+		brew install redis
+	else
+		echo "redis already installed"
+	fi
+}
+
+installDbVis() {
+	if [ -d "/Applications/DbVisualizer.app" ]; then
+		echo "dbvis desktop already installed"
+	else 
+		echo "Installing dbvis"
+		brew install --cask dbvisualizer
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -463,3 +482,5 @@ installMinikube
 installKompose
 installHelm
 installRedisResktop
+installRedis
+installDbVis
