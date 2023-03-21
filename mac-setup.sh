@@ -539,7 +539,6 @@ installHelm
 installRedisResktop
 installRedis
 installDbVis
-# installKafkaIde
 installKafka
 installCassandra
 installTeams
