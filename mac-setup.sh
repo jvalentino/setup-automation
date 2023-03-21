@@ -468,6 +468,25 @@ installKafka() {
 	fi
 }
 
+installCassandra() {
+	which -s cqlsh
+	if [[ $? != 0 ]] ; then
+		echo "Installing cql"
+		brew install cassandra
+	else
+		echo "cql already installed"
+	fi
+}
+
+installTeams() {
+	if [ -d "/Applications/Microsoft Teams.app" ]; then
+		echo "teams desktop already installed"
+	else 
+		echo "Installing teams"
+		brew install --cask microsoft-teams
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -513,4 +532,5 @@ installRedis
 installDbVis
 # installKafkaIde
 installKafka
-
+installCassandra
+installTeams
