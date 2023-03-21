@@ -487,6 +487,15 @@ installTeams() {
 	fi
 }
 
+installAws() {
+	which -s aws
+	if [[ $? != 0 ]] ; then
+		echo "Installing aws"
+		brew install awscli
+	else
+		echo "aws already installed"
+	fi
+}
 
 homebrew
 visualcodestudio
@@ -534,3 +543,4 @@ installDbVis
 installKafka
 installCassandra
 installTeams
+installAws
