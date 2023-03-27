@@ -497,6 +497,16 @@ installAws() {
 	fi
 }
 
+installTerraform() {
+	which -s terraform
+	if [[ $? != 0 ]] ; then
+		echo "Installing terraform"
+		brew install terraform
+	else
+		echo "terraform already installed"
+	fi
+}
+
 homebrew
 visualcodestudio
 installGit
@@ -543,3 +553,4 @@ installKafka
 installCassandra
 installTeams
 installAws
+installTerraform
