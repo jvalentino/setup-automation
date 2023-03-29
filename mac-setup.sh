@@ -507,6 +507,46 @@ installTerraform() {
 	fi
 }
 
+installKrew() {
+	# this does not work
+	which -s krew
+	if [[ $? != 0 ]] ; then
+		echo "Installing krew"
+		brew install krew
+	else
+		echo "krew already installed"
+	fi
+}
+
+# This didn't work out-of-the-box
+installKubernetic() {
+	if [ -d "/Applications/Kubernetic.app" ]; then
+		echo "kubernetic already installed"
+	else 
+		echo "Installing kubernetic"
+		brew install --cask kubernetic
+	fi
+}
+
+installAptakube() {
+	if [ -d "/Applications/Aptakube.app" ]; then
+		echo "aptakube already installed"
+	else 
+		echo "Installing aptakube"
+		brew install --cask aptakube
+	fi
+}
+
+installKcat() {
+	which -s kcat
+	if [[ $? != 0 ]] ; then
+		echo "Installing kcat"
+		brew install kcat
+	else
+		echo "kcat already installed"
+	fi
+}
+
 homebrew
 visualcodestudio
 installGit
@@ -554,3 +594,7 @@ installCassandra
 installTeams
 installAws
 installTerraform
+# installKrew
+# installKubernetic
+installAptakube
+installKcat
