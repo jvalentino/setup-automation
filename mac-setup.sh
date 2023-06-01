@@ -557,6 +557,16 @@ installYarn() {
 	fi
 }
 
+installPkgConfig() {
+	which -s pkg-config
+	if [[ $? != 0 ]] ; then
+		echo "Installing pkg-config"
+		brew install pkg-config cairo pango libpng jpeg giflib librsvg
+	else
+		echo "pkg-config already installed"
+	fi
+}
+
 homebrew
 visualcodestudio
 installGit
@@ -609,3 +619,4 @@ installTerraform
 installAptakube
 installKcat
 installYarn
+installPkgConfig
