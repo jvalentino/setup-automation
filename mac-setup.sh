@@ -547,6 +547,16 @@ installKcat() {
 	fi
 }
 
+installYarn() {
+	which -s yarn
+	if [[ $? != 0 ]] ; then
+		echo "Installing yarn"
+		brew install yarn
+	else
+		echo "yarn already installed"
+	fi
+}
+
 homebrew
 visualcodestudio
 installGit
@@ -598,3 +608,4 @@ installTerraform
 # installKubernetic
 installAptakube
 installKcat
+installYarn
