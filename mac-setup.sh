@@ -567,6 +567,15 @@ installPkgConfig() {
 	fi
 }
 
+installOneDrive() {
+	if [ -d "/Applications/OneDrive.app" ]; then
+		echo "OneDrive already installed"
+	else 
+		echo "Installing aptakuOneDrivebe"
+		brew install --cask onedrive
+	fi
+}
+
 homebrew
 visualcodestudio
 installGit
@@ -620,3 +629,4 @@ installAptakube
 installKcat
 installYarn
 installPkgConfig
+installOneDrive
