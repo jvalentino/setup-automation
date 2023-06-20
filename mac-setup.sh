@@ -596,6 +596,16 @@ installWiddershins() {
 	fi
 }
 
+installYq() {
+	which -s yq
+	if [[ $? != 0 ]] ; then
+		echo "Installing yq"
+		brew install yq
+	else
+		echo "yq already installed"
+	fi
+}
+
 homebrew
 visualcodestudio
 installGit
@@ -652,3 +662,4 @@ installPkgConfig
 installOneDrive
 installSwagger2markup
 installWiddershins
+installYq
