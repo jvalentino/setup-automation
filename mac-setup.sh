@@ -576,6 +576,16 @@ installOneDrive() {
 	fi
 }
 
+installSwagger2markup() {
+	which -s swagger2markup
+	if [[ $? != 0 ]] ; then
+		echo "Installing swagger2markup"
+		brew install swagger2markup-cli
+	else
+		echo "swagger2markup already installed"
+	fi
+}
+
 homebrew
 visualcodestudio
 installGit
@@ -630,3 +640,4 @@ installKcat
 installYarn
 installPkgConfig
 installOneDrive
+installSwagger2markup
