@@ -586,6 +586,16 @@ installSwagger2markup() {
 	fi
 }
 
+installWiddershins() {
+	which -s widdershins
+	if [[ $? != 0 ]] ; then
+		echo "Installing widdershins"
+		npm install -g widdershins
+	else
+		echo "widdershins already installed"
+	fi
+}
+
 homebrew
 visualcodestudio
 installGit
@@ -641,3 +651,4 @@ installYarn
 installPkgConfig
 installOneDrive
 installSwagger2markup
+installWiddershins
