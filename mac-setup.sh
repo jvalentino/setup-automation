@@ -606,6 +606,36 @@ installYq() {
 	fi
 }
 
+instllGraphQL() {
+	npm list -g graphql
+	if [[ $? != 0 ]] ; then
+		echo "Installing graphql"
+		npm install -g graphql
+	else
+		echo "graphql already installed"
+	fi
+}
+
+installApollo() {
+	which -s apollo
+	if [[ $? != 0 ]] ; then
+		echo "Installing apollo"
+		npm install -g apollo
+	else
+		echo "apollo already installed"
+	fi
+}
+
+installGraphQLMarkdown() {
+	which -s graphql-markdown
+	if [[ $? != 0 ]] ; then
+		echo "Installing graphql-markdown"
+		npm install -g graphql-markdown
+	else
+		echo "graphql-markdown already installed"
+	fi
+}
+
 homebrew
 visualcodestudio
 installGit
@@ -663,3 +693,8 @@ installOneDrive
 installSwagger2markup
 installWiddershins
 installYq
+instllGraphQL
+installApollo
+installGraphQLMarkdown
+
+
