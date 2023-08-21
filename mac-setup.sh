@@ -636,6 +636,20 @@ installGraphQLMarkdown() {
 	fi
 }
 
+installNvm() {
+	which -s nvm
+	if [[ $? != 0 ]] ; then
+		echo "Installing nvm"
+		brew install nvm
+		echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.zshrc
+		echo '[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"' >> ~/.zshrc
+		echo '[ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"' >> ~/.zshrc
+		source ~/.zshrc
+	else
+		echo "nvm already installed"
+	fi
+}
+
 homebrew
 visualcodestudio
 installGit
@@ -696,5 +710,5 @@ installYq
 instllGraphQL
 installApollo
 installGraphQLMarkdown
-
+installNvm
 
