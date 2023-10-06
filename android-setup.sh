@@ -37,7 +37,7 @@ ${ANDROID_SDK_MANAGER}/sdkmanager "system-images;android-33;google_apis;arm64-v8
 ${ANDROID_SDK_MANAGER}/avdmanager --verbose create avd --force --name "PIXEL" --package "system-images;android-33;google_apis;arm64-v8a" --tag "google_apis" --abi "arm64-v8a" --device "pixel_xl"
 # ${ANDROID_EMULATOR}/emulator -avd PIXEL
 
-echo 'export PATH="~/workspaces/android-sdk/cmdline-tools/latest/bin:$PATH"' >> ~/.zshrc
-echo 'export PATH="~/workspaces/android-sdk/emulator:$PATH"' >> ~/.zshrc
+echo 'export PATH="${HOME}/workspaces/android-sdk/cmdline-tools/latest/bin:$PATH"' >> ~/.zshrc
+echo 'export PATH="${HOME}/workspaces/android-sdk/emulator:$PATH"' >> ~/.zshrc
 
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/jvalentino/setup-automation/main/android-setup.sh)"
