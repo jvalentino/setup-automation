@@ -20,6 +20,7 @@ cd ~/workspaces
 brew install openjdk@17
 echo 'export JAVA_HOME="/opt/homebrew/opt/openjdk@17"' >> ~/.zshrc
 echo 'export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
 
 curl https://dl.google.com/android/repository/commandlinetools-mac-10406996_latest.zip -o android_sdk.zip
 unzip android_sdk.zip -d android-sdk
