@@ -27,6 +27,8 @@ mkdir ./android-sdk/cmdline-tools/latest
 mv ./android-sdk/cmdline-tools/bin ./android-sdk/cmdline-tools/latest
 mv ./android-sdk/cmdline-tools/lib ./android-sdk/cmdline-tools/latest
 mv ./android-sdk/cmdline-tools/*.* ./android-sdk/cmdline-tools/latest
+mkdir ./android-sdk/platform-tools
+mkdir ./android-sdk/platforms   
 
 export ANDROID_SDK_MANAGER=~/workspaces/android-sdk/cmdline-tools/latest/bin
 export ANDROID_EMULATOR=~/workspaces/android-sdk/emulator
@@ -37,3 +39,5 @@ ${ANDROID_SDK_MANAGER}/avdmanager --verbose create avd --force --name "PIXEL" --
 
 echo 'export PATH="~/workspaces/android-sdk/cmdline-tools/latest/bin:$PATH"' >> ~/.zshrc
 echo 'export PATH="~/workspaces/android-sdk/emulator:$PATH"' >> ~/.zshrc
+
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/jvalentino/setup-automation/main/android-setup.sh)"
