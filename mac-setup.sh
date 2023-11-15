@@ -479,7 +479,7 @@ installCassandra() {
 }
 
 installTeams() {
-	if [ -d "/Applications/Microsoft Teams.app" ]; then
+	if [ -d "/Applications/Microsoft Teams (work or school).app" ]; then
 		echo "teams desktop already installed"
 	else 
 		echo "Installing teams"
@@ -650,6 +650,44 @@ installNvm() {
 	fi
 }
 
+installColima() {
+	which -s colima
+	if [[ $? != 0 ]] ; then
+		echo "Installing colima"
+		brew install colima
+	else
+		echo "colima installed"
+	fi
+}
+
+installWireshark() {
+	if [ -d "/Applications/Wireshark.app" ]; then
+		echo "Wireshark already installed"
+	else 
+		echo "Installing Wireshark"
+		brew install --cask wireshark
+	fi
+}
+
+installCharles() {
+	if [ -d "/Applications/Charles.app" ]; then
+		echo "Charles already installed"
+	else 
+		echo "Installing Charles"
+		brew install --cask charles
+	fi
+}
+
+installArc() {
+	if [ -d "/Applications/Arc.app" ]; then
+		echo "arc already installed"
+	else 
+		echo "Installing arc"
+		brew install --cask arc
+	fi
+}
+
+
 homebrew
 visualcodestudio
 installGit
@@ -711,4 +749,9 @@ instllGraphQL
 installApollo
 installGraphQLMarkdown
 installNvm
+installColima
+installWireshark
+installCharles
+installArc
+
 
