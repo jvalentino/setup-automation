@@ -687,6 +687,16 @@ installArc() {
 	fi
 }
 
+installCircleCI() {
+	which -s circleci
+	if [[ $? != 0 ]] ; then
+		echo "Installing circleci"
+		brew install circleci
+	else
+		echo "circleci installed"
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -753,5 +763,5 @@ installColima
 installWireshark
 installCharles
 installArc
-
+installCircleCI
 
