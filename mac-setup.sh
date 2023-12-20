@@ -698,6 +698,28 @@ installCircleCI() {
 }
 
 
+installPipx() {
+	which -s pipx
+	if [[ $? != 0 ]] ; then
+		echo "Installing pipx"
+		brew install pipx
+	else
+		echo "pipx installed"
+	fi
+}
+
+installPoetry() {
+	which -s poetry
+	if [[ $? != 0 ]] ; then
+		echo "Installing poetry"
+		pipx install poetry
+		pipx ensurepath
+	else
+		echo "poetry installed"
+	fi
+}
+
+
 homebrew
 visualcodestudio
 installGit
@@ -764,4 +786,6 @@ installWireshark
 installCharles
 installArc
 installCircleCI
+installPipx
+installPoetry
 
