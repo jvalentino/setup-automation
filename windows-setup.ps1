@@ -357,6 +357,30 @@ function Install-vscode {
 	}	
 }
 
+function Install-gzip {
+	$command = "gzip"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		choco install gzip -y
+		$PROFILE
+	}
+}
+
+function Install-tar {
+	$command = "tar"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		choco install tartool -y
+		$PROFILE
+	}
+}
+
 Install-Chocolatey
 Install-Git
 Install-Git-Desktop
@@ -383,7 +407,7 @@ Install-postman
 Install-zoom
 Install-minikube
 Install-helm
-Install-RedisDesktop
+# Install-RedisDesktop
 Install-DbViz
 Install-AzureCli
 Install-terraform
@@ -391,5 +415,6 @@ Install-yarn
 Install-nvm
 Install-pyenv
 Install-vscode
-
+Install-gzip
+Install-tar
 
