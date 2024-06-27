@@ -1,4 +1,5 @@
-
+# You can create a shortcut with this target to automatically open an elevated prompt:
+# %windir%\System32\cmd.exe /k cd "C:\Users\John.Valentino\workspace\code
 
 # Command line tool for acting like a windows package manager
 function Install-Chocolatey {
@@ -83,7 +84,7 @@ function Install-DockerDesktop {
 }
 
 function Install-SpringToolSuite {
-	if (Test-Path "C:\TBD") {
+	if (Test-Path "C:\ProgramData\chocolatey\lib\springtoolsuite\tools\sts-4.17.2.RELEASE\SpringToolSuite4.exe") {
 		Write-Output "STS already installed"
 	} else {
 		Write-Output "STS to be installed"
@@ -91,6 +92,270 @@ function Install-SpringToolSuite {
 	}	
 }
 
+function Install-Typora {
+	if (Test-Path "C:\Program Files\Typora\Typora.exe") {
+		Write-Output "Typora already installed"
+	} else {
+		Write-Output "Typora to be installed"
+		choco install typora -y
+	}	
+}
+
+function Install-Gulp {
+	$command = "gulp"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		npm install --global gulp
+	}
+}
+
+function Install-MarkdownToc {
+	$command = "markdown-toc"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		npm install --global markdown-toc
+	}
+}
+
+function Install-React {
+	$command = "create-react-app"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		npm install --global create-react-app
+	}
+}
+
+function Install-Gradle {
+	if (Test-Path "C:\ProgramData\chocolatey\lib\gradle\gradle.nuspec") {
+		Write-Output "Gradle already installed"
+	} else {
+		Write-Output "Gradle to be installed"
+		choco install gradle -y
+	}	
+}
+
+function Install-Maven {
+	if (Test-Path "C:\ProgramData\chocolatey\lib\maven\maven.nupkg") {
+		Write-Output "Maven already installed"
+	} else {
+		Write-Output "Maven to be installed"
+		choco install maven -y
+	}	
+}
+
+function Install-IntelliJ {
+	if (Test-Path "C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.1.4\bin\idea64.exe") {
+		Write-Output "IntelliJ already installed"
+	} else {
+		Write-Output "IntelliJ to be installed"
+		choco install intellijidea-community -y
+	}	
+}
+
+function Install-Python {
+	$command = "python"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		choco install python -y
+		$PROFILE
+	}
+}
+
+function Install-PYB {
+	$command = "pyb"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		pip install pybuilder
+		$PROFILE
+	}
+}
+
+function Install-virtualenv {
+	$command = "virtualenv"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		pip install virtualenv
+		$PROFILE
+	}
+}
+
+function Install-pgadmin {
+	if (Test-Path "C:\Program Files\PostgreSQL\16\pgAdmin 4\runtime\pgAdmin4.exe") {
+		Write-Output "pgadmin already installed"
+	} else {
+		Write-Output "pgadmin to be installed"
+		choco install pgadmin4 -y
+	}	
+}
+
+function Install-liquibase {
+	$command = "liquibase"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		choco install liquibase -y
+		$PROFILE
+	}
+}
+
+function Install-psql {
+	$command = "psql"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		choco install postgresql -y
+		$PROFILE
+	}
+}
+
+function Install-postman {
+	if (Test-Path "C:\Users\John.Valentino\AppData\Local\Postman\Postman.exe") {
+		Write-Output "postman already installed"
+	} else {
+		Write-Output "postman to be installed"
+		choco install postman -y
+	}	
+}
+
+function Install-zoom {
+	if (Test-Path "C:\Program Files\Zoom\bin\Zoom.exe") {
+		Write-Output "zoom already installed"
+	} else {
+		Write-Output "zoom to be installed"
+		choco install zoom -y
+	}	
+}
+
+function Install-minikube {
+	if (Test-Path "C:\ProgramData\chocolatey\lib\Minikube\Minikube.nupkg") {
+		Write-Output "minikube already installed"
+	} else {
+		Write-Output "minikube to be installed"
+		choco install minikube -y
+	}	
+}
+
+
+function Install-helm {
+	$command = "helm"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		choco install kubernetes-helm -y
+		$PROFILE
+	}
+}
+
+function Install-RedisDesktop {
+	if (Test-Path "C:\TBD") {
+		Write-Output "RedisDesktop already installed"
+	} else {
+		Write-Output "RedisDesktop to be installed"
+		choco install redis-desktop-manager -y
+	}	
+}
+
+function Install-DbViz {
+	if (Test-Path "C:\TBD") {
+		Write-Output "DbViz already installed"
+	} else {
+		Write-Output "DbViz to be installed"
+		choco install db-visualizer -y
+	}	
+}
+
+function Install-AzureCli {
+	$command = "az"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		choco install azure-cli -y
+		$PROFILE
+	}
+}
+
+function Install-terraform {
+	$command = "terraform"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		choco install terraform -y
+		$PROFILE
+	}
+}
+
+function Install-yarn {
+	$command = "yarn"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		choco install yarn -y
+		$PROFILE
+	}
+}
+
+function Install-nvm {
+	$command = "nvm"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		choco install nvm -y
+		$PROFILE
+	}
+}
+
+function Install-pyenv {
+	$command = "pyenv"
+
+	if ($(where.exe $command) -ne $null) {
+		Write-Output "$command is found"
+	} else {
+		Write-Output "$command is not found"
+		choco install pyenv-win -y
+		$PROFILE
+	}
+}
+
+function Install-vscode {
+	if (Test-Path "C:\TBD") {
+		Write-Output "vscode already installed"
+	} else {
+		Write-Output "vscode to be installed"
+		choco install vscode -y
+	}	
+}
 
 Install-Chocolatey
 Install-Git
@@ -101,5 +366,30 @@ Install-Node
 Install-OpenJDK17
 Install-DockerDesktop
 Install-SpringToolSuite
+Install-Typora
+Install-Gulp
+Install-MarkdownToc
+Install-React
+Install-Gradle
+Install-Maven
+Install-IntelliJ
+Install-Python
+Install-PYB
+Install-virtualenv
+Install-pgadmin
+Install-liquibase
+Install-psql
+Install-postman
+Install-zoom
+Install-minikube
+Install-helm
+Install-RedisDesktop
+Install-DbViz
+Install-AzureCli
+Install-terraform
+Install-yarn
+Install-nvm
+Install-pyenv
+Install-vscode
 
 
