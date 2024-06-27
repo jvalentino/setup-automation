@@ -479,7 +479,7 @@ installCassandra() {
 }
 
 installTeams() {
-	if [ -d "/Applications/Microsoft Teams (work or school).app" ]; then
+	if [ -d "/Applications/Microsoft Teams.app" ]; then
 		echo "teams desktop already installed"
 	else 
 		echo "Installing teams"
@@ -637,7 +637,7 @@ installGraphQLMarkdown() {
 }
 
 installNvm() {
-	which -s nvm
+	nvm --version
 	if [[ $? != 0 ]] ; then
 		echo "Installing nvm"
 		brew install nvm
@@ -719,6 +719,34 @@ installPoetry() {
 	fi
 }
 
+installPyenv() {
+	which -s pyenv
+	if [[ $? != 0 ]] ; then
+		echo "Installing pyenv"
+		brew install pyenv
+	else
+		echo "pyenv installed"
+	fi
+}
+
+installTableau() {
+	if [ -d "/Applications/Tableau Desktop 2024.1.app" ]; then
+		echo "tableau already installed"
+	else 
+		echo "Installing tableau"
+		brew install --cask tableau
+	fi
+}
+
+installMsRemoteDesktop() {
+	if [ -d "/Applications/TBD.app" ]; then
+		echo "MS Remote desktop already installed"
+	else 
+		echo "Installing MS remote desktop"
+		brew install --cask microsoft-remote-desktop
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -780,7 +808,8 @@ installYq
 instllGraphQL
 installApollo
 installGraphQLMarkdown
-installNvm
+# It keeps reinstalling it, don't know what is up
+# installNvm
 installColima
 installWireshark
 installCharles
@@ -788,4 +817,7 @@ installArc
 installCircleCI
 installPipx
 installPoetry
+installPyenv
+installTableau
+installMsRemoteDesktop
 
