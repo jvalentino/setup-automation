@@ -381,6 +381,32 @@ function Install-tar {
 	}
 }
 
+function Install-Dropbox {
+	if (Test-Path "C:\TBD") {
+		Write-Output "Dropbox already installed"
+	} else {
+		Write-Output "Dropbox to be installed"
+		choco install dropbox -y
+	}	
+}
+
+function install-WSL {
+	dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+	wsl --install -d Ubuntu
+	wsl --set-default-version 2
+	wsl --list --verbose
+}
+
+function Install-RancherDesktop {
+	if (Test-Path "C:\TBD") {
+		Write-Output "RancherDesktop already installed"
+	} else {
+		Write-Output "RancherDesktop to be installed"
+		choco install rancher-desktop -y
+	}	
+}
+
+
 Install-Chocolatey
 Install-Git
 Install-Git-Desktop
@@ -417,4 +443,6 @@ Install-pyenv
 Install-vscode
 Install-gzip
 Install-tar
+Install-Dropbox
+Install-RancherDesktop
 
