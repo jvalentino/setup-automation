@@ -4,7 +4,10 @@ At any place I go, I am always having to install the same software over and over
 
 This is my "catch all" project for containing a script for installing everything I could possibly need.
 
-It also works as a good thing to copy an paste from if you are trying to automate some specific development enviroment. Copy it, paste it, remove the stuff you don't need, add the stuff you do. Like this for example if you only cared about JavaScript:
+
+## Mac
+
+It also works as a good thing to copy an paste from if you are trying to automate some specific development environment. Copy it, paste it, remove the stuff you don't need, add the stuff you do. Like this for example if you only cared about JavaScript:
 
 ```bash
 # ...
@@ -43,11 +46,6 @@ installPostman
 installDropbox
 ```
 
-
-
-
-## Mac
-
 It utilized homebrew as the basis for tool installation, and is run using the following:
 
 ```bash
@@ -59,10 +57,51 @@ If will only install the tools that have not already been installed, so you can 
 
 ## Windows
 
-There is currently no windows automated setup, so if you want to use windows and this doesn't exist, it is your responsibility to automate it and put the resulting script here.
+The windows setup is a bit messy due to the lack of an ability to reload the shell environment, so as a result you basically have to keep running `windows-setup.bat` until in admin elevated shells until it stops installing stuff. This is because there are several tools that install other tools to install other tools.
+
+It also works as a good thing to copy an paste from if you are trying to automate some specific development environment. Copy it, paste it, remove the stuff you don't need, add the stuff you do. Like this for example if you only cared about JavaScript and Docker:
+
+```bat
+Install-Chocolatey
+Install-Git
+Install-Git-Desktop
+Install-Teams
+Install-Slack
+# Install-Node
+# Install-OpenJDK17
+Install-DockerDesktop
+# Install-SpringToolSuite
+# Install-Typora
+Install-Gulp
+Install-MarkdownToc
+Install-React
+# Install-Gradle
+# Install-Maven
+# Install-IntelliJ
+# Install-Python
+# Install-PYB
+# Install-virtualenv
+# Install-pgadmin
+# Install-liquibase
+# Install-psql
+# Install-postman
+# Install-zoom
+# Install-minikube
+# Install-helm
+# Install-DbViz
+# Install-AzureCli
+# Install-terraform
+Install-yarn
+Install-nvm
+# Install-pyenv
+Install-vscode
+Install-gzip
+Install-tar
+# Install-Dropbox
+Install-RancherDesktop
+```
 
 
-**TODO!**
 
 # Tooling
 
@@ -281,5 +320,141 @@ TBD
 TBD
 
 ## Dropbox
+
+TBD
+
+## Zoom
+
+TBD
+
+## Camtasia
+
+TBD
+
+## Tomcat
+
+TBD
+
+## Minikube
+
+TBD
+
+## Kompose
+
+TBD
+
+## Helm
+
+TBD
+
+## Redis Desktop
+
+TBD
+
+## Redis
+
+TBD
+
+## DbVisualizer
+
+TBD
+
+## Kafka
+
+TBD
+
+## Cassandra
+
+TBD
+
+## Microsoft Teams
+
+TBD
+
+## AWS CLI
+
+TBD
+
+## Terraform
+
+TBD
+
+## Aptakube
+
+TBD
+
+## kcat
+
+TBD
+
+## yarn
+
+TBD
+
+## pkgconfig
+
+TBD
+
+## yq
+
+TBD
+
+## swagger2markup
+
+TBD
+
+## Widdershins
+
+TBD
+
+## GraphQL
+
+TBD
+
+## Apollo
+
+TBD
+
+## NVM
+
+TBD
+
+## Colima
+
+TBD
+
+## Wireshark
+
+TBD
+
+## Charles
+
+TBD
+
+## Arc Browser
+
+TBD
+
+## CircleCI CLI
+
+TBD
+
+## pipx
+
+TBD
+
+## Poetry
+
+TBD
+
+## pyenv
+
+TBD
+
+## Tableau Desktop
+
+TBD
+
+## Microsoft Remote Desktop
 
 TBD
