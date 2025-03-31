@@ -4,7 +4,6 @@ At any place I go, I am always having to install the same software over and over
 
 This is my "catch all" project for containing a script for installing everything I could possibly need.
 
-
 ## Mac
 
 It also works as a good thing to copy an paste from if you are trying to automate some specific development environment. Copy it, paste it, remove the stuff you don't need, add the stuff you do. Like this for example if you only cared about JavaScript:
