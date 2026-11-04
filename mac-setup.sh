@@ -747,6 +747,193 @@ installMsRemoteDesktop() {
 	fi
 }
 
+# ---------------------------------------------------------------------------
+# Tools for a pnpm/Node monorepo that runs its services in Docker on Google
+# Cloud. Node (installNode) and Docker Desktop (installDockerDesktop) are
+# installed further up.
+# ---------------------------------------------------------------------------
+
+# Uses the pnpm version the repo pins in package.json "packageManager"
+installPnpm() {
+	which -s pnpm
+	if [[ $? != 0 ]] ; then
+		echo "Installing pnpm"
+		brew install pnpm
+	else
+		echo "pnpm already installed"
+	fi
+}
+
+installGh() {
+	which -s gh
+	if [[ $? != 0 ]] ; then
+		echo "Installing gh"
+		brew install gh
+	else
+		echo "gh already installed"
+	fi
+}
+
+# Google Cloud SDK, which provides the gcloud command
+installGcloud() {
+	which -s gcloud
+	if [[ $? != 0 ]] ; then
+		echo "Installing gcloud"
+		brew install --cask gcloud-cli
+	else
+		echo "gcloud already installed"
+	fi
+}
+
+# Auth plugin that lets kubectl talk to GKE clusters
+installGkeAuthPlugin() {
+	which -s gcloud
+	if [[ $? != 0 ]] ; then
+		echo "gcloud not installed, skipping gke-gcloud-auth-plugin"
+		return
+	fi
+
+	which -s gke-gcloud-auth-plugin
+	if [[ $? != 0 ]] ; then
+		echo "Installing gke-gcloud-auth-plugin"
+		gcloud components install gke-gcloud-auth-plugin --quiet
+	else
+		echo "gke-gcloud-auth-plugin already installed"
+	fi
+}
+
+installJq() {
+	which -s jq
+	if [[ $? != 0 ]] ; then
+		echo "Installing jq"
+		brew install jq
+	else
+		echo "jq already installed"
+	fi
+}
+
+installKubectl() {
+	which -s kubectl
+	if [[ $? != 0 ]] ; then
+		echo "Installing kubectl"
+		brew install kubernetes-cli
+	else
+		echo "kubectl already installed"
+	fi
+}
+
+# Prose linter
+installVale() {
+	which -s vale
+	if [[ $? != 0 ]] ; then
+		echo "Installing vale"
+		brew install vale
+	else
+		echo "vale already installed"
+	fi
+}
+
+# These steps need a person, so they are printed instead of run. Anything
+# specific to your team (accounts, projects, secrets) belongs in your team's
+# own onboarding doc, not in this script.
+printTeamSetupReminders() {
+	echo ""
+	echo "Manual steps this script does not do:"
+	echo "  - Open Docker Desktop once, and set its memory limit to what your team's onboarding doc says"
+	echo "  - gcloud auth login"
+	echo "  - gcloud auth application-default login"
+	echo "  - gh auth login"
+	echo "  - Clone the repo, run pnpm install, and follow your team's onboarding doc from there"
+	echo ""
+}
+
+# ---------------------------------------------------------------------------
+# Public developer tools
+# ---------------------------------------------------------------------------
+
+installGhostty() {
+	if [ -d "/Applications/Ghostty.app" ]; then
+		echo "Ghostty already installed"
+	else
+		echo "Installing Ghostty"
+		brew install --cask ghostty
+	fi
+}
+
+# Native installer, which puts claude in ~/.local/bin
+installClaudeCode() {
+	if [ -x "$HOME/.local/bin/claude" ] || which -s claude; then
+		echo "Claude Code already installed"
+	else
+		echo "Installing Claude Code"
+		curl -fsSL https://claude.ai/install.sh | bash
+	fi
+}
+
+# Installer script from the herdr project, which puts herdr in ~/.local/bin
+installHerdr() {
+	if [ -x "$HOME/.local/bin/herdr" ] || which -s herdr; then
+		echo "herdr already installed"
+	else
+		echo "Installing herdr"
+		curl -fsSL https://releases.herdr.dev/app/install.sh | sh
+	fi
+}
+
+installDeno() {
+	which -s deno
+	if [[ $? != 0 ]] ; then
+		echo "Installing deno"
+		brew install deno
+	else
+		echo "deno already installed"
+	fi
+}
+
+# ---------------------------------------------------------------------------
+# Other personal tools
+# ---------------------------------------------------------------------------
+
+# Menu bar system monitor
+installStats() {
+	if [ -d "/Applications/Stats.app" ]; then
+		echo "Stats already installed"
+	else
+		echo "Installing Stats"
+		brew install --cask stats
+	fi
+}
+
+# Brightness and volume control for external displays
+installMonitorControl() {
+	if [ -d "/Applications/MonitorControl.app" ]; then
+		echo "MonitorControl already installed"
+	else
+		echo "Installing MonitorControl"
+		brew install --cask monitorcontrol
+	fi
+}
+
+installFfmpeg() {
+	which -s ffmpeg
+	if [[ $? != 0 ]] ; then
+		echo "Installing ffmpeg"
+		brew install ffmpeg
+	else
+		echo "ffmpeg already installed"
+	fi
+}
+
+installYtDlp() {
+	which -s yt-dlp
+	if [[ $? != 0 ]] ; then
+		echo "Installing yt-dlp"
+		brew install yt-dlp
+	else
+		echo "yt-dlp already installed"
+	fi
+}
+
 
 homebrew
 visualcodestudio
@@ -820,4 +1007,27 @@ installPoetry
 installPyenv
 installTableau
 installMsRemoteDesktop
+
+# pnpm/Node/Docker/Google Cloud monorepo work
+# (Node, Docker Desktop, Docker Compose and Helm are installed above)
+installPnpm
+installGh
+installGcloud
+installGkeAuthPlugin
+installJq
+installKubectl
+installVale
+printTeamSetupReminders
+
+# Public developer tools
+installGhostty
+installClaudeCode
+installHerdr
+installDeno
+
+# Other personal tools
+installStats
+installMonitorControl
+installFfmpeg
+installYtDlp
 
