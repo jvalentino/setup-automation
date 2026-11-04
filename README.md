@@ -458,4 +458,112 @@ TBD
 
 TBD
 
+## pnpm
+
+> pnpm is a fast, disk space efficient package manager for Node.js.
+
+- https://pnpm.io/
+
+Used for pnpm/turbo monorepos. It switches to the version a repo pins in `packageManager` in its `package.json`, so the Homebrew version is only the starting point.
+
+## GitHub CLI
+
+> `gh` is GitHub on the command line. It brings pull requests, issues, and other GitHub concepts to the terminal.
+
+- https://cli.github.com/
+
+Run `gh auth login` afterwards, which this script does not do.
+
+## Google Cloud CLI
+
+> The Google Cloud CLI is a set of tools to create and manage Google Cloud resources.
+
+- https://cloud.google.com/sdk/docs/install
+
+Provides the `gcloud` command. After installing, run `gcloud auth login` and `gcloud auth application-default login` yourself, which this script does not do.
+
+## GKE gcloud auth plugin
+
+> The `gke-gcloud-auth-plugin` is what lets kubectl authenticate to Google Kubernetes Engine clusters.
+
+- https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
+
+Installed as a gcloud component, and skipped when gcloud is missing.
+
+## jq
+
+> jq is a lightweight and flexible command-line JSON processor.
+
+- https://jqlang.org/
+
+Newer macOS versions ship it already, in which case it is skipped.
+
+## kubectl
+
+> kubectl is the command line tool for communicating with a Kubernetes cluster.
+
+- https://kubernetes.io/docs/reference/kubectl/
+
+Installed as the `kubernetes-cli` formula.
+
+## Vale
+
+> Vale is a command-line tool that brings code-like linting to prose.
+
+- https://vale.sh/
+
+## Team setup reminders
+
+After the tools above, the script prints the steps that need a person: Docker Desktop's memory limit, the gcloud and gh logins, and cloning and installing the repo. Account, project and secret details are deliberately not in this repo, so follow your own team's onboarding doc for those.
+
+## Ghostty
+
+> Ghostty is a fast, feature-rich, and cross-platform terminal emulator.
+
+- https://ghostty.org/
+
+## Claude Code
+
+> Claude Code is Anthropic's agentic coding tool that lives in your terminal.
+
+- https://code.claude.com/docs
+
+Installed with the native installer, which puts `claude` in `~/.local/bin`. Make sure that directory is on your `PATH`, and log in the first time you run it.
+
+## herdr
+
+A terminal workspace manager for running several coding agent sessions side by side.
+
+Installed with the project's own installer script (`curl -fsSL https://releases.herdr.dev/app/install.sh | sh`), which puts `herdr` in `~/.local/bin`. Like any piped installer, read the script first if you want to know what it does.
+
+## Deno
+
+> Deno is a JavaScript, TypeScript, and WebAssembly runtime.
+
+- https://deno.com/
+
+## Stats
+
+> Stats is a macOS system monitor that lives in the menu bar.
+
+- https://github.com/exelban/stats
+
+## MonitorControl
+
+> MonitorControl lets you control the brightness and volume of external displays from your Mac.
+
+- https://github.com/MonitorControl/MonitorControl
+
+## ffmpeg
+
+> FFmpeg is a collection of libraries and tools to process multimedia content such as audio, video, subtitles and related metadata.
+
+- https://ffmpeg.org/
+
+## yt-dlp
+
+> yt-dlp is a feature-rich command-line audio/video downloader.
+
+- https://github.com/yt-dlp/yt-dlp
+
 test
